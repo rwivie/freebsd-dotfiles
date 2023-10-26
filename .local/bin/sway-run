@@ -1,0 +1,19 @@
+#!/bin/sh
+
+
+export TERMINAL="foot"
+export XDG_CURRENT_DESKTOP="sway"
+export XDG_SESSION_DESKTOP="sway"
+export XDG_SESSION_TYPE="wayland"
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+export MOZ_ENABLE_WAYLAND=1
+export MOZ_WEBRENDER=1
+export MOZ_ACCELERATED=1
+
+export XCURSOR_THEME=Capitaine_Cursors_Nord_White
+
+sleep 20 && dbus-update-activation-environment --all &
+
+dbus-run-session sway > ~/.sway.log 2>&1
+
