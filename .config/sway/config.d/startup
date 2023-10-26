@@ -1,0 +1,15 @@
+exec /usr/local/libexec/polkit-gnome-authentication-agent-1
+exec dunst -conf ~/.config/dunst/dunstrc_sway
+#exec swww init
+#exec swww_randomize.sh /home/ron/wallpapers
+# Sway Fader
+# exec python3 ~/.config/sway/scripts/swayfader.py 
+exec autotiling
+exec swayidle timeout 900 swaylock timeout 930 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' 
+#exec swayidle timeout 900 swaylock timeout 930 'systemctl suspend' timeout 920 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
+exec /usr/local/bin/musicpd ~/.config/mpd/mpd.conf
+exec xcape -e 'Super_L=Alt_L|F1'
+exec xcape -e 'Super_R=Alt_L|F1'
+exec pipewire -v
+exec sleep 5 && /usr/local/libexec/xdg-desktop-portal -v -r
+exec sleep 5 && /usr/local/libexec/xdg-desktop-portal-wlr -l DEBUG
