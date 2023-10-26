@@ -1,0 +1,59 @@
+#==== add aliases here
+
+alias inst="sudo pkg install"
+alias info="pkg info" #Display information about installed packages and package files (without pkg name will list all installed)
+alias query="pkg query" #Query information about installed packages and package files
+alias search="pkg search" # Search for the given pattern in the remote package repositories
+alias whichpkg="pkg which" #Determine which package installed a file
+alias pkgmsg="pkg info -D" #Show the pkg-message of a package
+alias pkgaut="pkg audit" #Audit installed packages for security advisories
+alias pkgnonauto="sudo pkg set -A 0" #Change a package from automatic to non-automatic, which will prevent autoremove from removing it
+alias pkgauto="sudo pkg set -A 1" #Change a package from non-automatic to automatic, which will make autoremove allow it be removed once nothing depends on it
+alias upd="sudo pkg update" #Update the available remote repositories
+alias upg="sudo pkg upgrade" #Upgrade a package to a newer version
+alias rem="sudo pkg delete" #Delete an installed package
+alias rmo="sudo pkg autoremove" #Delete packages which were automatically installed as dependencies and are not required any more
+alias nonaut="pkg query -e '%a = 0' %o" #List non-automatic packages
+alias aut="pkg query -e '%a = 1' %o"
+
+#==== system
+alias ker="kldstat" # show loaded kernel modules
+alias serv="service -e" # show running services
+alias servall="service -rv" # list all services, not just running.
+
+#==== mount ext usb
+alias mount1="sudo mount -t ext2fs /dev/da0p1 /mnt/ron/da0p1" # roms
+alias mount3="sudo mount -t ext2fs /dev/da0p3 /mnt/ron/da0p3" # linux backup
+alias mount5="sudo mount -t ext2fs /dev/da0p5 /mnt/ron/da0p5" # Games_Linux
+
+#==== for color ls
+alias ls='ls -aF --color=auto'
+
+#==== for xorg
+alias startx="startx 2> ~/.xsession-errors"
+alias started="nano ~/.xinitrc"
+
+#==== for sway
+alias swayprop="swaymsg -p -t get_tree | grep app_id"
+alias swayxprop="swaymsg -p -t get_tree | grep class"
+#alias sway="sway 2> ~/.sway.log"
+alias sway="sway-run"
+#alias swaypicker="grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:-"
+alias swaypick="wl-color-picker"
+alias layer="sleep 5 && swaymsg -r -t get_outputs | jq '.[0].layer_shell_surfaces | .[] | .namespace'"
+alias ssway="seatd-launch sway-run"
+
+#==== git dotfiles
+alias config='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+#==== misc
+alias nethogs="sudo nethogs wlan0"
+alias nethogs-eth="sudo nethogs re0"
+alias iftop="sudo iftop -i wlan0"
+alias iftop-eth="sudo iftop -i re0"
+alias clock="tty-clock -sSctB -C 6"
+alias obxprop='xprop | grep "^_OB_APP"'
+#alias ls='ls --color=auto'
+alias duhist="dunstctl history-pop"
+alias scrot_th="scrot -t 20 -d 5 -c $HOME/Pictures/ScreenShots/`date +%Y-%m-%d_%H:%M:%S`.png"
+alias wttr="curl wttr.in/Coleman?u"
