@@ -1,0 +1,136 @@
+/*
+ * Waybar styles config
+ * ~/.config/waybar/style.css
+ * based on https://gitlab.com/fazzi/dotfiles  
+ * made for `waybar-hyprland`
+ * remember to download `JetBrainsMono Nerd Font` font,
+ * `sudo pacman -S ttf-jetbrains-mono-nerd` on Arch Linux
+ *
+ * yes i have no knowledge about css
+ * why am i commenting everything
+ *
+ * this config works in a terrible way, please do not edit
+ */
+
+/* worked good enough for me. based on https://github.com/NorNub/HyprDots  edited by wickedlester*/
+
+* {
+  font: bold 14px "JetBrainsMono Nerd Font"; /* font weight, font size and font. propo nerd font for centered icons, symbols nerd font does not work great on bold text */
+  color: #d8dee9; /* text color */
+}
+
+window#waybar {
+  background: transparent; /* main window transparent background */
+}
+
+tooltip {
+  background: #242841; /* tooltip background */
+  border: 2px solid #5e81ac; /* tooltip border size and color */
+  border-radius: 5px; /* tooltip rounded corners */
+}
+
+/* *****************************
+ * modules (pills) section start
+ * *****************************/
+#custom-launcher,
+#gamemode,
+#window,
+#workspaces,
+#mode,
+#tray,
+#pulseaudio,
+#custom-updates,
+#idle_inhibitor,
+#custom-weather,
+#custom-wttrbar,
+#clock,
+#memory,
+#cpu,
+#mpd,
+#custom-power,
+#cava {
+  text-shadow: 1px 1px 2px black; /* text shadow, offset-x | offset-y | blur-radius | color */
+  background: #242841; /* background color */
+  margin: 10px 4px 4px 4px; /* empty spaces around */
+  padding: 4px 10px; /* extend pill size, vertical then horizontal */
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.4); /* pill background shadows */
+  border-radius: 5px; /* rounded corners */
+}
+
+/* extend empty space on both side of the bar,
+ * value from ~/.config/hypr/hyprland.conf
+ * gaps_out (8px) + border size (2px) = 10px */
+
+#custom-launcher {
+    color: #bf616a;
+    font-size:15px;
+}
+
+#clock {
+  margin-right: 10px;
+}
+
+#custom-updates {
+    padding-right: 15px;
+}
+
+#workspaces {
+  padding: 0px; /* remove padding around workspace module */
+}
+
+#workspaces button {
+  padding: 0px 4px; /* fit with pill padding, 0px for not haveing duped vertical padding, 4px to make a square (4px value from module padding: ...#clock {padding >>4px<< 10px}) */
+  border: 2px solid transparent; /* required by active workspace top color, or the bar will jitter */
+  transition-property: background-color, border-top-color; /* smooth transition for workspace module */
+  transition-duration: .1s;
+}
+
+/*#workspaces button.active {
+  color: #a6adc8;
+}*/
+
+#workspaces button.focused {
+    /*color: #a6e3a1;*/
+    background-color: #2e3440;
+    border-top-color: #5e81ac;
+}
+
+#workspaces button:hover {
+  background-color: #4c566a; 
+}
+
+#idle_inhibitor.activated {   
+    color: #d08770;
+}
+
+#idle_inhibitor.deactivated { 
+    color: #ebcb8b;
+}
+
+#memory {
+    color: #5e81ac;
+}
+
+#cpu {
+    color: #d08770;
+}
+
+#mpd {
+    color: #b48ead;
+}
+
+#pulseaudio {
+    color: #81a1c1;
+    padding-right: 15px;
+}
+
+#pulseaudio.microphone {
+    color: #b48ead;
+}
+
+#custom-power {
+  color: #bf616a;
+  padding-right: 13px;
+}
+
+
