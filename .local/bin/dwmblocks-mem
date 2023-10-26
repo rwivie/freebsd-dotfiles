@@ -1,0 +1,8 @@
+#!/bin/sh 
+
+total=$(sysctl -n hw.physmem)
+free=$(sysctl -n vm.stats.vm.v_free_count)
+page_size=$(getconf PAGESIZE)
+used=$(echo "scale=2; ($total - ($free * $page_size)) / 1024 / 1024 / 1024" | bc)
+
+echo " $(printf '%.2f' $used)GB / $(printf '%.2f' $(echo "$total / 1024 / 1024 / 1024" | bc))GB  "
