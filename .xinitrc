@@ -32,15 +32,28 @@ if [ -d /usr/local/etc/X11/xinit/xinitrc.d ] ; then
 	unset f
 fi
 
-/usr/local/bin/musicpd ~/.config/mpd/mpd.conf
+/usr/local/bin/musicpd ~/.config/mpd/mpd.conf &
+export XDG_SESSION_TYPE="x11"
 
 #==== for xfce
 #. /usr/local/etc/xdg/xfce4/xinitrc
 
+#==== for openbox
+#exec openbox-session
+#exec dbus-run-session openbox-session
+
 #==== for dwm
-export XDG_SESSION_DESKTOP="dwm"
-export XDG_CURRENT_DESKTOP="dwm"
-exec dwmstart.sh
+#export XDG_SESSION_DESKTOP="dwm"
+#export XDG_CURRENT_DESKTOP="dwm"
+#export DESKTOP_SESSION="dwm"
+#exec dbus-run-session dwmstart.sh
+##exec dwmstart.sh
+
+#==== for dk
+export XDG_SESSION_DESKTOP="dk"
+export XDG_CURRENT_DESKTOP="dk"
+export DESKTOP_SESSION="dk"
+exec dbus-run-session dkstart.sh
 
 #==== for fvwm3
 #export XDG_SESSION_DESKTOP="fvwm"
