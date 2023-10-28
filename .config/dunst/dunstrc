@@ -278,14 +278,17 @@
     # Otherwise the '#' and following  would be interpreted as a comment.
     background = "#2E3440"
     foreground = "#5E81AC"
+    highlight  = "#5e81ac"
  
 [urgency_normal]
     background = "#2E3440"
     foreground = "#5E81AC"
+    highlight  = "#5e81ac"
  
 [urgency_critical]
     background = "#2E3440"
     foreground = "#D08770"
+    highlight  = "#D08770"
     frame_color = "#ebcb8b"
 
 #===========================
