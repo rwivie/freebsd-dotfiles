@@ -22,10 +22,7 @@ fi
 
 #==== run some shit
 #$HOME/.config/dk/scripts/bar2.sh &
-#conky -p3 -d -c $HOME/.config/dk/scripts/conkybarc | lemonbar -f "JetBrainsMono Nerd Font:size=14" -F "#d8dee9" -B "#242841" -U "#5e81ac" -a 32 -g 2560x20+2560+0 &
-#conky -p3 -d -c $HOME/.config/dk/scripts/conkybarc | lemonbar -f "JetBrainsMono Nerd Font:size=14" -F "#d8dee9" -B "#242841" -U "#5e81ac" -a 32 &
 ~/.config/dk/polybar/launch.sh &
-#polybar &
 
 # adjust border widths based on the DPI of the monitor
 #px=$(xrandr | grep ' connected' | tail -n1 | grep -o '[0-9]\+x[0-9]\+' | cut -d'x' -f2)
