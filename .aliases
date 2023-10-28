@@ -2,6 +2,7 @@
 
 alias inst="sudo pkg install"
 alias info="pkg info" #Display information about installed packages and package files (without pkg name will list all installed)
+alias infomsg="pkg info --pkg-message" #display the package message
 alias query="pkg query" #Query information about installed packages and package files
 alias search="pkg search" # Search for the given pattern in the remote package repositories
 alias whichpkg="pkg which" #Determine which package installed a file
@@ -20,11 +21,15 @@ alias aut="pkg query -e '%a = 1' %o"
 alias ker="kldstat" # show loaded kernel modules
 alias serv="service -e" # show running services
 alias servall="service -rv" # list all services, not just running.
+alias pcmvol="mixer pcm.volume=100"
 
 #==== mount ext usb
 alias mount1="sudo mount -t ext2fs /dev/da0p1 /mnt/ron/da0p1" # roms
 alias mount3="sudo mount -t ext2fs /dev/da0p3 /mnt/ron/da0p3" # linux backup
 alias mount5="sudo mount -t ext2fs /dev/da0p5 /mnt/ron/da0p5" # Games_Linux
+alias fsck1="fsck.ext4 /dev/da0p1"
+alias fsck3="fsck.ext4 /dev/da0p3"
+alias fsck5="fsck.ext4 /dev/da0p5"
 
 #==== for color ls
 alias ls='ls -aF --color=auto'
