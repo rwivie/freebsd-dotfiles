@@ -9,7 +9,7 @@ export EDITOR='nano'
 export VISUAL='mousepad'
 export BROWSER="firefox"
 export TERMINAL="kitty"
-#export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORMTHEME=qt5ct
 export WTRLOC="Coleman"
 
 export XDG_CONFIG_HOME="$HOME/.config"
