@@ -15,5 +15,7 @@ xcape -e 'Alt_R=Alt_L|F1' &
 caffeine &
 volumeicon &
 /home/ron/.config/dwmblocks/dwmblocks &
-exec dbus-run-session $HOME/.config/dwm-6.4/dwm
+#exec dbus-run-session $HOME/.config/dwm-6.4/dwm
+#exec dbus-launch --sh-syntax --exit-with-session $HOME/.config/dwm-6.4/dwm
+exec ck-launch-session $HOME/.config/dwm-6.4/dwm
 
