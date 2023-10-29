@@ -32,6 +32,13 @@ if [ -d /usr/local/etc/X11/xinit/xinitrc.d ] ; then
 	unset f
 fi
 
+#==== set resoltuion
+xrandr --output DP-3 --mode 2560x1440 --rate 144.00
+
+#==== try to set dpi
+#xdpyinfo | grep -B 2 resolution (shows current)
+xrandr --dpi 109
+
 /usr/local/bin/musicpd ~/.config/mpd/mpd.conf &
 export XDG_SESSION_TYPE="x11"
 
@@ -58,4 +65,5 @@ exec dbus-run-session dkstart.sh
 #==== for fvwm3
 #export XDG_SESSION_DESKTOP="fvwm"
 #export XDG_CURRENT_DESKTOP="fvwm"
+#export DESKTOP_SESSION="fvwm"
 #exec fvwmstart.sh
