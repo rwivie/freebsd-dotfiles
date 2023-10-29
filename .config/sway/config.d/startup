@@ -12,7 +12,7 @@ exec /usr/local/bin/musicpd ~/.config/mpd/mpd.conf
 #exec xcape -e 'Super_R=Alt_L|F1'
 exec xsettingsd
 exec /usr/local/lib/libexec/kdeconnectd
-exec sleep 5 && GDK_BACKEND=x11 kdeconnect-indicator
+#exec sleep 5 && GDK_BACKEND=x11 kdeconnect-indicator
 exec pipewire -v
 exec sleep 5 && /usr/local/libexec/xdg-desktop-portal -v -r
 exec sleep 5 && /usr/local/libexec/xdg-desktop-portal-wlr -l DEBUG
