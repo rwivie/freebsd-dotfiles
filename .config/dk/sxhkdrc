@@ -74,6 +74,10 @@ XF86Tools
 super + c
         isrunning-compton --toggle
 
+#==== toggle mpd polybar
+super + m
+	polybar-msg action mpd module_toggle
+
 # reload sxhkd
 alt + shift + x
 	pkill -USR1 -x sxhkd
