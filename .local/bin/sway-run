@@ -11,7 +11,12 @@ export MOZ_ENABLE_WAYLAND=1
 export MOZ_WEBRENDER=1
 export MOZ_ACCELERATED=1
 
-export XCURSOR_THEME=Capitaine_Cursors_Nord_White
+export QT_QPA_PLATFORM=wayland
+QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+export QT_QPA_PLATFORM="xcb"
+
+export XCURSOR_THEME=XCursor-Pro-Nord-White
+export XCURSOR_SIZE=32
 
 sleep 20 && dbus-update-activation-environment --all &
 
