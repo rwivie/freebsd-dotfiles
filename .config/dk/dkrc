@@ -152,7 +152,7 @@ fi
 	# rule class, instance, and title regexes (*ALWAYS* CASE INSENSITIVE)
 
 	# open window(s) on a specific workspace (assigned monitor)
-	dkcmd rule class="^gimp$" ws=5
+	#dkcmd rule class="^gimp$" ws=5
 
 	# open window(s) on a monitor by number or name (active workspace on monitor)
 	dkcmd rule class="^chromium$" mon="HDMI-A-0"
@@ -183,6 +183,7 @@ fi
 	#dkcmd rule remove class="^firefox$"
 	dkcmd rule class="^Thunar$" ws=3 focus=true
         dkcmd rule class="^Mousepad$" ws=4 focus=true
+	dkcmd rule class="^Gimp-2.10" ws=5 focus=true
         dkcmd rule class="^Steam$" ws=6 focus=true
         dkcmd rule class="^heroic$" ws=6 focus=true
 	dkcmd rule class="^Chromium-browser$" ws=9 focus=true
