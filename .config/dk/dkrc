@@ -181,11 +181,12 @@ fi
 	# update or remove an existing rule with the same match patterns
 	#dkcmd rule class="^firefox$" mon="HDMI-A-0"
 	#dkcmd rule remove class="^firefox$"
-
-       dkcmd rule class="^Thunar$" ws=3 focus=true
+	dkcmd rule class="^Thunar$" ws=3 focus=true
         dkcmd rule class="^Mousepad$" ws=4 focus=true
         dkcmd rule class="^Steam$" ws=6 focus=true
         dkcmd rule class="^heroic$" ws=6 focus=true
+	dkcmd rule class="^Chromium-browser$" ws=9 focus=true
+	dkcmd rule class="^Google-chrome$" ws=9 focus=true
 
 	# apply current rule set to all existing windows (used mainly for WM restart)
 	dkcmd rule apply '*'
