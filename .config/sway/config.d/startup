@@ -8,8 +8,21 @@ exec autotiling
 exec swayidle timeout 900 swaylock timeout 930 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' 
 #exec swayidle timeout 900 swaylock timeout 930 'systemctl suspend' timeout 920 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
 exec /usr/local/bin/musicpd ~/.config/mpd/mpd.conf
-exec xcape -e 'Super_L=Alt_L|F1'
-exec xcape -e 'Super_R=Alt_L|F1'
+#exec xcape -e 'Super_L=Alt_L|F1'
+#exec xcape -e 'Super_R=Alt_L|F1'
+exec xsettingsd
+exec /usr/local/lib/libexec/kdeconnectd
+exec sleep 5 && GDK_BACKEND=x11 kdeconnect-indicator
 exec pipewire -v
 exec sleep 5 && /usr/local/libexec/xdg-desktop-portal -v -r
 exec sleep 5 && /usr/local/libexec/xdg-desktop-portal-wlr -l DEBUG
+
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+#    gsettings set $gnome-schema gtk-theme 'Your theme'
+#    gsettings set $gnome-schema icon-theme 'Your icon theme'
+    gsettings set $gnome-schema cursor-theme 'XCursor-Pro-Nord-White'
+    gsettings set $gnome-schema cursor-size '32'
+#    gsettings set $gnome-schema font-name 'Your font name'
+}
