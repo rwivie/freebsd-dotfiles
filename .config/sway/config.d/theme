@@ -1,6 +1,9 @@
 #exec swaybg -i /home/ron/wallpapers/freebsd_nord_orange_1.png
 exec waypaper --restore
 
+#==== set cursor theme & size
+seat * xcursor_theme XCursor-Pro-Nord-White 32
+
 # Set inner/outer gaps
 smart_gaps off
 gaps inner 10
