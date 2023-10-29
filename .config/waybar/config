@@ -219,6 +219,13 @@
         "tooltip": false,
     },
 
+    "custom/kdeconnect": {
+      "exec": "$HOME/.config/waybar/scripts/custom-kdeconnect.sh battery",
+      "format": " {}",
+      "interval": 60,
+      "on-click": "$HOME/.config/waybar/scripts/custom-kdeconnect.sh ring"
+    }, 
+
       "custom/power": {
           "format":"⏻",
           "on-click": "exec wlogout -css $HOME/.config/wlogout/style.css -l $HOME/.config/wlogout/layout -b 5 -m 650 -c 50 -p layer-shell",
