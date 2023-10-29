@@ -24,6 +24,9 @@ super + shift + Return
 alt + F1
 	rofi_run_dk -d
 
+super + space
+	rofi_run_dk -d
+
 #==== rofi logout
 super + x
          rofi_run_dk -l
