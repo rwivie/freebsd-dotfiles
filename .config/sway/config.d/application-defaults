@@ -45,6 +45,9 @@ assign [class="Chromium-browser"] 9
 for_window [class="Google-chrome"] focus
 assign [class="Google-chrome"] 9
 
+for_window [app_id="thunderbird"] focus
+assign [app_id="thunderbird"] 9
+
 #"gsimplecal"
 for_window [app_id="gsimplecal"] border none
 for_window [app_id="gsimplecal"] floating enable
