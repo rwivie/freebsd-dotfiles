@@ -1,0 +1,17 @@
+(if (is (application_name) "Pidgin")
+        (begin
+                (if (is (window_role) "buddy_list")
+                        (begin
+                                (undecorate)
+                                (skip_tasklist)
+                                (geometry "199x767+0+0")
+                        )
+                )
+                (if (is (window_role) "conversation")
+                        (begin
+                                (undecorate)
+                                (geometry "822x400+201+0")
+                        )
+                )
+        )
+)

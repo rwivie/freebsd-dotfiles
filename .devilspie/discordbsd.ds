@@ -1,0 +1,7 @@
+(and (is (window_class) "DiscordBSD")
+     (is (window_role) "browser-window")
+        (begin
+                (set_workspace 2)
+                (geometry "1261x1300+116+41")
+        )
+)

@@ -1,0 +1,6 @@
+(and (is (window_class) "Hexchat")
+        (begin
+                (set_workspace 2)
+                (geometry "1143x1298-22+41")
+        )
+)

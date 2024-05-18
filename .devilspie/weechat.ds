@@ -1,0 +1,7 @@
+(and (is (window_class) "Xfce-terminal")
+     (is (window_name) "weechat")
+        (begin
+                (set_workspace 2)
+                (geometry "114x59-14+41")
+        )
+)

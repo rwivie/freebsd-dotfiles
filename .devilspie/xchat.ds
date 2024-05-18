@@ -1,0 +1,7 @@
+(and (is (application_name) "xchat")
+     (is (window_role) "")
+        (begin
+                (undecorate)
+                (geometry "823x363+200+404")
+        )
+)

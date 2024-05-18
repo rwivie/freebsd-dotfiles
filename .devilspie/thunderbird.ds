@@ -1,0 +1,7 @@
+(and (is (window_class) "thunderbird")
+     (is (window_role) "3pane")
+        (begin
+                (set_workspace 4)
+                (geometry "2136x1279+248+53")
+        )
+)
