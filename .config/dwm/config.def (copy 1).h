@@ -163,7 +163,6 @@ static const Rule rules[] = {
 	RULE(.class = "kitty", .instance = "kitty", .title = "ncmpcpp", .tags = 1 << 6, .switchtag = 1, .isfloating = 1)
 	RULE(.class = "ncmpcpp", .instance = "st", .title = "ncmpcpp", .tags = 1 << 6, .switchtag = 1, .isfloating = 1)
 	RULE(.class = "Nsxiv", .tags = 1 << 6, .switchtag = 1, .isfloating = 1)
-	RULE(.class = "Nsxiv", .instance = "nsxiv-fill", .isfloating = 1)
 	RULE(.class = "discord", .tags = 1 << 7, .switchtag = 1)
 	RULE(.class = "Hexchat", .tags = 1 << 7, .switchtag = 1)
 	RULE(.class = "thunderbird", .instance = "Mail", .tags = 1 << 8)
@@ -279,9 +278,9 @@ static const Key keys[] = {
 	{ 0,				XF86XK_AudioPrev,	   spawn,	  SHCMD("mpc prev") },
 	{ 0,				XF86XK_AudioNext,	   spawn,	  SHCMD("mpc next") },
 	{ 0,				XF86XK_AudioStop,	   spawn,	  SHCMD("mpc stop") },
-        /*{ 0,                            XF86XK_AudioMute,          spawn,         SHCMD("pamixer -t; ~/.config/sway/scripts/audio-notification.sh") },*/
-        /*{ 0,                            XF86XK_AudioLowerVolume,   spawn,         SHCMD("pamixer --decrease 5; ~/.config/sway/scripts/audio-notification.sh") },*/
-        /*{ 0,                            XF86XK_AudioRaiseVolume,   spawn,         SHCMD("pamixer --increase 5; ~/.config/sway/scripts/audio-notification.sh") },*/
+        { 0,                            XF86XK_AudioMute,          spawn,         SHCMD("pactl set-sink-mute 0 toggle; kill -44 $(pidof dwmblocks)") },
+        { 0,                            XF86XK_AudioLowerVolume,   spawn,         SHCMD("pactl set-sink-mute 0 false ; i3-volume -nPpC down 5; kill -44 $(pidof dwmblocks)") },
+        { 0,                            XF86XK_AudioRaiseVolume,   spawn,         SHCMD("pactl set-sink-mute 0 false ; i3-volume -nPpC up 5; kill -44 $(pidof dwmblocks)") },
         { 0,                            XK_Print,                  spawn,         SHCMD("ob-screenshot --in5") },
 	/*{ MODKEY,                       XK_minus, scratchpad_show, {0} },
 	{ MODKEY|ShiftMask,             XK_minus, scratchpad_hide, {0} },
