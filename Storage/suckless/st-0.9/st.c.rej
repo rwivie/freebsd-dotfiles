@@ -1,0 +1,10 @@
+--- st.c
++++ st.c
+@@ -1024,6 +1054,7 @@ tsetdirtattr(int attr)
+ void
+ tfulldirt(void)
+ {
++	tsync_end();
+ 	tsetdirt(0, term.row-1);
+ }
+ 

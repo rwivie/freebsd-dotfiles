@@ -1,0 +1,10 @@
+--- x.c
++++ x.c
+@@ -255,6 +255,7 @@ static char *opt_name  = NULL;
+ static char *opt_title = NULL;
+ 
+ static uint buttons; /* bit field of pressed buttons */
++static int focused = 0;
+ 
+ void
+ clipcopy(const Arg *dummy)

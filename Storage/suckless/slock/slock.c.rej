@@ -1,0 +1,10 @@
+--- slock.c
++++ slock.c
+@@ -272,6 +276,7 @@ lockscreen(Display *dpy, struct xrandr *rr, int screen)
+ 				XRRSelectInput(dpy, lock->win, RRScreenChangeNotifyMask);
+ 
+ 			XSelectInput(dpy, lock->root, SubstructureNotifyMask);
++			locktime = time(NULL);
+ 			return lock;
+ 		}
+ 
