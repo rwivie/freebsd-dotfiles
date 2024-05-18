@@ -1,0 +1,87 @@
+#==== add aliases here
+
+alias inst="sudo pkg install"
+alias info="pkg info" #Display information about installed packages and package files (without pkg name will list all installed)
+alias infomsg="pkg info --pkg-message" #display the package message
+alias query="pkg query" #Query information about installed packages and package files
+alias search="pkg search" # Search for the given pattern in the remote package repositories
+alias whichpkg="pkg which" #Determine which package installed a file
+alias pkgmsg="pkg info -D" #Show the pkg-message of a package
+alias pkgaut="pkg audit" #Audit installed packages for security advisories
+alias pkgnonauto="sudo pkg set -A 0" #Change a package from automatic to non-automatic, which will prevent autoremove from removing it
+alias pkgauto="sudo pkg set -A 1" #Change a package from non-automatic to automatic, which will make autoremove allow it be removed once nothing depends on it
+alias freeup="freebsd-update upgrade -r" # ex freebsd-update upgrade -r 14.0-RC3
+alias upd="sudo pkg update" #Update the available remote repositories
+alias upg="sudo pkg upgrade" #Upgrade a package to a newer version
+alias rem="sudo pkg delete" #Delete an installed package
+alias rmo="sudo pkg autoremove" #Delete packages which were automatically installed as dependencies and are not required any more
+alias nonaut="pkg query -e '%a = 0' %o" #List non-automatic packages
+alias aut="pkg query -e '%a = 1' %o"
+alias su="su -m"
+
+#==== system
+alias ker="kldstat" # show loaded kernel modules
+alias serv="service -e" # show running services
+alias servall="service -rv" # list all services, not just running.
+alias pcmvol="mixer pcm.volume=100"
+alias updatedb="sudo /usr/libexec/locate.updatedb"
+alias temp="sysctl -a | grep temperature"
+alias follow="grc tail -f /var/log/messages"
+alias xlog="grc tail -f /var/log/Xorg.0.log"
+alias xtail="grc tail -f ~/.xsession-errors | moreutils-ts"
+#alias dwmlog="grc tail -f ~/.dwm.log"
+alias dwmlog="grc tail -f ~/.logs/dwm/*-*-*_*.dwm.log"
+alias i3log="grc tail -f ~/.i3.log"
+alias oblog="grc tail -f ~/.openbox.log | moreutils-ts"
+alias qtilelog="grc tail -f /home/ron/.local/share/qtile/qtile.log"
+
+#==== mount ext usb
+alias mount1="sudo mount -t ext2fs /dev/da0p1 /mnt/ron/da0p1" # roms
+alias mount3="sudo mount -t ext2fs /dev/da0p3 /mnt/ron/da0p3" # linux backup
+alias mount5="sudo mount -t ext2fs /dev/da0p5 /mnt/ron/da0p5" # Games_Linux
+alias fsck1="sudo fsck.ext4 /dev/da0p1"
+alias fsck3="sudo fsck.ext4 /dev/da0p3"
+alias fsck5="sudo fsck.ext4 /dev/da0p5"
+alias umount3="sudo umount /mnt/ron/da0p3"
+
+#==== for color ls
+alias ls='ls -aF --color=auto'
+
+#==== for xorg
+alias startx="startx 2> ~/.xsession-errors"
+alias started="nano ~/.xinitrc"
+
+#==== for sway
+alias swayprop="swaymsg -p -t get_tree | grep app_id"
+alias swayxprop="swaymsg -p -t get_tree | grep class"
+#alias sway="sway 2> ~/.sway.log"
+alias sway="sway-run"
+#alias swaypicker="grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:-"
+alias swaypick="wl-color-picker"
+alias layer="sleep 5 && swaymsg -r -t get_outputs | jq '.[0].layer_shell_surfaces | .[] | .namespace'"
+alias ssway="seatd-launch sway-run"
+alias swaylog="grc tail -f ~/.sway.log"
+
+#==== for wayfire
+alias wf="ck-launch-session dbus-launch --exit-with-session wayfire_start.sh"
+
+#==== git dotfiles
+alias config='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+#==== misc
+alias nethogs="sudo nethogs wlan0"
+alias nethogs-eth="sudo nethogs re0"
+alias iftop="sudo iftop -i wlan0"
+alias iftop-eth="sudo iftop -i re0"
+alias clock="tty-clock -sSctB -C 6"
+alias obxprop='xprop | grep "^_OB_APP"'
+#alias ls='ls --color=auto'
+alias duhist="dunstctl history-pop"
+alias scrot_th="scrot -t 20 -d 5 -c $HOME/Pictures/ScreenShots/`date +%Y-%m-%d_%H:%M:%S`.png"
+#alias wttr="curl wttr.in/Coleman?u"
+alias wttr="curl -s 'wttr.in/Coleman?u'"
+alias nfetch="neofetch --config /home/ron/.config/neofetch/freebsd.conf"
+alias nfetch2="neofetch --config /home/ron/.config/neofetch/freebsd2.conf"
+#alias ffetch="fastfetch --config ~/.local/share/fastfetch/7.jsonc --logo ~/.local/share/fastfetch/logos/Daemon.png"
+alias ffetch="fastfetch --kitty-direct Daemon.png --config ~/.local/share/fastfetch/7.jsonc"
+alias cow="cowsay '$(fortune)' | lolcat"
