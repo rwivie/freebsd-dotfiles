@@ -1,0 +1,339 @@
+Xcursor.theme: XCursor-Pro-Nord-White
+Xcursor.size: 32
+
+!==== Fonts config ====
+
+xft.dpi: 109
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! Copyright (c) 2016-present Sven Greb <development@svengreb.de>
+! This source code is licensed under the MIT license found in the license file.
+
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
+
+*.foreground:   nord4
+*.background:   nord0
+*.cursorColor:  nord4
+*fading: 35
+*fadeColor: nord3
+
+!*.color0: nord0
+!*.color1: nord11
+!*.color2: nord14
+!*.color3: nord13
+!*.color4: nord10
+!*.color5: nord15
+!*.color6: nord7
+!*.color7: nord5
+!*.color8: nord3
+!*.color9: nord11
+!*.color10: nord14
+!*.color11: nord13
+!*.color12: nord10
+!*.color13: nord15
+!*.color14: nord7
+!*.color15: nord6
+
+*.color0: nord1
+*.color1: nord11
+*.color2: nord14
+*.color3: nord13
+*.color4: nord9
+*.color5: nord15
+*.color6: nord8
+*.color7: nord5
+*.color8: nord3
+*.color9: nord11
+*.color10: nord14
+*.color11: nord13
+*.color12: nord9
+*.color13: nord15
+*.color14: nord7
+*.color15: nord6
+
+!=== xmenu
+xmenu.font: JetBrainsMono Nerd Font:pixelsize=14
+xmenu.background: #2e3440
+xmenu.foreground: #eceff4
+xmenu.selbackground: #5e81ac
+xmenu.selforeground: #2e3440
+xmenu.border: #5e81ac
+xmenu.separator: #5e81ac
+xmenu.gap: 2
+xmenu.width: 70
+xmenu.height: 30
+xmenu.borderWidth: 4
+xmenu.separatorWidth: 2
+xmenu.alignment: left
+xmenu.maxItems: 20 
+
+!==== st ====
+st.font:         JetBrainsMono Nerd Font:style:medium:pixelsize=14
+
+!==== xterm ====
+
+xterm*font: 7x13
+xterm*faceName: PragmataPro:size=10:antialias=false
+xterm*loginShell: true
+xterm*vt100*geometry: 90x34
+xterm*saveLines: 2000
+xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+xterm*termName: xterm-color
+xterm*eightBitInput: false
+
+!==== URxvt ====
+
+URxvt*blurRadius: 20
+
+! general settings
+URxvt*saveline:         15000
+URxvt*termName:         rxvt-256color
+!URxvt*iso14755:         false
+URxvt.iso14755_52: false
+
+! appearance
+URxvt*depth:            32
+URxvt*background:       [90]#2b303b
+URxvt*scrollBar:        false
+URxvt*scrollBar_right:  false
+URxvt*internalBorder:   0
+URxvt*externalBorder:   0
+
+! fonts
+URxvt*letterSpace:              -1
+URxvt.font: xft:JetBrainsMono Nerd Font:size=11,xft:MesloLGS Nerd Font:autohint=true:size=12
+! run :.!fc-list | grep <font-name>
+
+! macros for clipboard and selection "m"=Alt
+URxvt.copyCommand:      xclip -i -selection clipboard
+URxvt.pasteCommand:     xclip -o -selection clipboard
+URxvt.keysym.m-c:       perl:clipboard:copy
+URxvt.keysym.m-v:       perl:clipboard:paste
+URxvt.urlLauncher:      exo-open
+URxvt.underlineURLs:    true
+URxvt.urlButton:        1
+URxvt.geometry:         140x40
+
+! tabbed
+URxvt.tabbed.tabbar-fg: 4
+URxvt.tabbed.tabbar-bg: 16
+URxvt.tabbed.tab-fg:    15
+URxvt.tabbed.tab-bg:    4
+URxvt*buffered:         false
+
+! --- xosview --- !
+
+xosview*title:      xosview
+xosview*geometry:   156x308
+xosview*font:       Iosevka Nerd Font Mono:size=11
+! xosview*font:       6x13
+xosview*captions:   False
+xosview*labels:     True
+xosview*usedlabels: True
+
+xosview*background:      #4c566a
+xosview*foreground:      #eceff4
+xosview*meterLabelColor: #eceff4
+xosview*usedLabelColor:  #eceff4
+
+! General Meter Resources
+! replace prefix with the correct meter name (see man xosview2, section X RESOURCES)
+! xosview*prefixPriority:   5
+! xosview*prefixUsedFormat: autoscale
+! xosview*prefixDecay:      False
+! xosview*prefixUsedDecay:  True
+! xosview*prefixGraph:      True
+
+! Load Meter
+xosview*load: False
+
+! CPU Meter
+xosview*cpu:                True
+xosview*cpuFormat:          single
+xosview*cpuPriority:        5
+xosview*cpuUsedFormat:      percent
+xosview*cpuDecay:           False
+xosview*cpuUsedDecay:       False
+xosview*cpuGraph:           True
+
+xosview*cpuUserColor:       #5e81ac
+xosview*cpuSystemColor:     #5e81ac
+xosview*cpuWaitColor:       #81a1c1
+xosview*cpuNiceColor:       #5e81ac
+xosview*cpuInterruptColor:  #81a1c1
+xosview*cpuSInterruptColor: #81a1c1
+xosview*cpuStolenColor:     #5e81ac
+xosview*cpuGuestColor:      #5e81ac
+xosview*cpuNiceGuestColor:  #5e81ac
+xosview*cpuFreeColor:       #2e3440
+
+! Memory Meter
+xosview*mem:               True
+xosview*memPriority:       5
+xosview*memUsedFormat:     autoscale
+xosview*memDecay:          False
+xosview*memUsedDecay:      False
+xosview*memGraph:          True
+
+xosview*memUsedColor:      #5e81ac
+xosview*memBufferColor:    #81a1c1
+xosview*memCacheColor:     #81a1c1
+xosview*memSwapCacheColor: #81a1c1
+xosview*memFreeColor:      #2e3440
+
+! Swap Meter
+xosview*swap: False
+
+! IRQ Meter
+xosview*irqrate: False
+
+! Page Meter
+xosview*page: False
+
+! Wireless Link Meter 
+xosview*wlink:          False
+xosview*wlinkPoorValue: 20
+xosview*wlinkBacground: #2e3440
+xosview*wlinkGoodColor: #5e81ac
+xosview*wlinkPoorColor: #bf616a
+
+! Network Meter
+xosview*net:           True
+! 60 Mib/s
+xosview*netBandwidth:  6553600
+xosview*netIface:      enp7s0
+!xosview*netIface:      wlp6s0
+xosview*netPriority:   5
+xosview*netUsedFormat: autoscale
+xosview*netDecay:      False
+xosview*netUsedDecay:  False
+xosview*netGraph:      True
+xosview*netInColor:    #5e81ac
+xosview*netOutColor:   #b48ead
+xosview*netBackground: #2e3440
+
+! NFS stats (client)
+xosview*NFSStats: False
+
+! NFS stats (server)
+xosview*NFSDStats: False
+
+! Interrupt Meter
+xosview*interrupts: False
+
+! Thermal Zone (GPU)
+xosview*tzone:           False
+xosview*tzoneHotTrip:    50
+xosview*tzoneCritTrip:   70
+xosview*tzonePeak:       80
+xosview*tzonePriority:   5
+xosview*tzoneUsedFormat: autoscale
+xosview*tzoneDecay:      False
+xosview*tzoneUsedDecay:  False
+xosview*tzoneGraph:      True
+xosview*tzoneBackground: #2e3440
+xosview*tzoneForeGround: #a3be8c
+xosview*tzoneHotColor:   #ebcb8b
+xosview*tzoneCritColor:  #bf616a
+
+! Lm Sensors Temperature
+xosview*lmstemp: False
+
+! Coretemp Meter (CPU)
+xosview*coretemp:            False
+xosview*coretempHighest:     100
+xosview*coretempHigh:        60
+xosview*coretempPriority:    5
+xosview*coretempUsedFormat:  autoscale
+xosview*coretempDecay:       False
+xosview*coretempUsedDecay:   False
+xosview*coretempGraph:       False
+xosview*coretempActColor:    #ebcb8b
+xosview*coretempHighColor:   #bf616a
+xosview*coretempIdleColor:   #a3be8c
+xosview*coretempDisplayType: maximum
+
+! BSD Sensor
+xosview*bsdsensor: False
+
+! Battery Meter
+xosview*battery: False
+
+! Disk Meter
+xosview*disk: False
+
+! File System Meter
+xosview*filesys:           True
+xosview*filesysPriority:   600
+xosview*filesysUsedFormat: autoscale
+xosview*filesysDecay:      False
+xosview*filesysUsedDecay:  False
+xosview*filesysGraph:      False
+xosview*filesysMounts:     /
+xosview*filesysFGColor:    #5e81ac
+xosview*filesysBGColor:    #2e3440
+xosview*filesysNoneColor:  #bf616a
+
+! RAID meter
+xosview*RAID: False
+
+! XClock
+!=======================================
+XClock*analog: true
+XClock*width: 200
+XClock*height: 200
+XClock*update: 1
+XClock*background: #2e3440
+XClock*foreground: #d8dee9
+XClock*hands: #d8dee9
+XClock*highlight: #d8dee9
+XClock*twentyfour: true
+XClock*chime: false
+XClock*padding: 2
+XClock*font: -xos4-terminus-medium-r-normal-*-14-140-*-*-*-*-iso8859-1
+XClock*render: true
+XClock*face: -xos4-terminus-medium-r-normal-*-14-140-*-*-*-*-iso8859-1
+XClock*sharp: false
+XClock*buffer: false
+XClock*hourColor: #4c566a
+XClock*minuteColor: #4c566a
+XClock*secondColor: #4c566a
+XClock*majorColor: #4c566a
+XClock*minorColor: #4c566axclock
+
+!===================
+! Xeyes
+XEyes*Background:   yellow
+Xeyes*Foreground:   blue
+
+! Font for regular texts.
+! Font names are case-insensitive.
+! You can use a comma-separated list of fonts to set a fallback font.
+xscreensaver-auth.default.Dialog.bodyFont: JetBrainsMono Nerd Font 12
+
+! Window background color. You can use color names.
+xscreensaver-auth.default.Dialog.background: black
+
+! Main text color. You can also use HEX color codes.
+xscreensaver-auth.default.Dialog.foreground: #ffffff
+
