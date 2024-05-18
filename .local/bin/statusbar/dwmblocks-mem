@@ -1,0 +1,15 @@
+#!/bin/sh
+
+total=$(sysctl -n hw.physmem)
+free=$(sysctl -n vm.stats.vm.v_free_count)
+inactive=$(sysctl -n vm.stats.vm.v_inactive_count)
+cache=$(sysctl -n vm.stats.vm.v_cache_count)
+page_size=$(getconf PAGESIZE)
+
+used_memory=$(($total - (($free + $inactive + $cache) * $page_size)))
+
+used=$(echo "scale=2; $used_memory / 1024 / 1024 / 1024" | bc)
+total_gb=$(echo "scale=2; $total / 1024 / 1024 / 1024" | bc)
+
+echo "^c#B48EAD^ $(printf '%.2f' $used)GB / $(printf '%.2f' $total_gb)GB ^d^"
+

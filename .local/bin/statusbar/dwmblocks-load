@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "^c#A3BE8C^襁 :$(uptime | sed -e 's/^.*averages: // ; s/,.*$//')^d^  "
+
